@@ -1,3 +1,4 @@
+# ----- Audio / features -----
 sample_rate: 44100
 n_mels: 128
 n_fft: 1024
@@ -5,21 +6,30 @@ hop_length: 441
 mel_fmin: 0
 mel_fmax: 22050
 
+# Crop the time axis of the log-mel to a fixed length (pad/trim)
 time_crop_frames: 1024
 
+# ----- Augmentation (SpecAugment) -----
 specaugment:
   freq_masks: 2
   freq_width: 16
   time_masks: 2
   time_width: 64
 
+# Mixup strength (0.0 to disable)
 mixup_alpha: 0.2
+
+# Label smoothing for CE loss (0–0.1 is typical)
 label_smoothing: 0.05
+
+# ----- Optimization / regularization -----
 weight_decay: 1e-4
-ema_decay: 0.999
-warmup_epochs: 3
-tta_crops: 5
+ema_decay: 0.999          # Exponential Moving Average of weights
+warmup_epochs: 3          # Cosine LR warmup epochs
 
-backbone: efficientnet_b2
-pretrained: true
+# ----- Evaluation -----
+tta_crops: 5               # number of time-shift crops for TTA
 
+# ----- Model -----
+backbone: efficientnet_b2  # torchvision backbone
+pretrained: true           # use ImageNet weights
