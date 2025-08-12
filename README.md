@@ -56,3 +56,12 @@ data/
     └── fold1_eval.csv
 
 ```
+
+## CSV format:
+
+...
+filename,scene_label
+fold1/airport_0001.wav,airport
+fold1/bus_0001.wav,bus
+...
+
