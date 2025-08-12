@@ -10,11 +10,11 @@ Pipeline = **log-mel spectrograms** + **transfer learning** (EfficientNet-B2, Im
 
 ## Data format
 
-    Audio: mono (mixed on load), 44.1 kHz WAV, 10-s segments.
+Audio: mono (mixed on load), 44.1 kHz WAV, 10-s segments.
 
-    CSV columns: filename, scene_label, where filename is relative to --audio_root.
+CSV columns: filename, scene_label, where filename is relative to --audio_root.
 
-    Default classes (10):
+Default classes (10):
 
 ```bash
 
