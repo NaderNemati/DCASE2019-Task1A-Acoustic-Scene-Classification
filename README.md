@@ -8,6 +8,35 @@ Pipeline = **log-mel spectrograms** + **transfer learning** (EfficientNet-B2, Im
 
 ---
 
+# 0) Setup
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+
+# 1) (Optional) make folds
+python prepare_folds.py --meta data/metadata/all.csv --out_dir data/metadata --folds 4
+
+# 2) Train (fold 1)
+python asc_simple.py \
+  --audio_root data/audio \
+  --train_csv data/metadata/fold1_train.csv \
+  --val_csv   data/metadata/fold1_eval.csv \
+  --epochs 25 --bs 16 --lr 3e-4 --backbone effnet_b0
+
+# 3) Outputs (in runs/simple_exp/)
+# - best.pt
+# - log.csv
+# - training_curves.png
+# - confusion_matrix.png
+# - cls_report.txt
+
+
+
+
+
+
+
+
+
 ## Data format
 
 Audio: mono (mixed on load), 44.1 kHz WAV, 10-s segments.
