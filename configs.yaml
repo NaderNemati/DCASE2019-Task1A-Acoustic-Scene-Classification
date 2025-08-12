@@ -1,0 +1,25 @@
+sample_rate: 44100
+n_mels: 128
+n_fft: 1024
+hop_length: 441
+mel_fmin: 0
+mel_fmax: 22050
+
+time_crop_frames: 1024
+
+specaugment:
+  freq_masks: 2
+  freq_width: 16
+  time_masks: 2
+  time_width: 64
+
+mixup_alpha: 0.2
+label_smoothing: 0.05
+weight_decay: 1e-4
+ema_decay: 0.999
+warmup_epochs: 3
+tta_crops: 5
+
+backbone: efficientnet_b2
+pretrained: true
+
