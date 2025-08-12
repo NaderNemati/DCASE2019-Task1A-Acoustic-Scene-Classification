@@ -80,29 +80,13 @@ Defaults are in configs.yaml (STFT/mel, SpecAugment widths, mixup α, label smoo
 
 ```python
 
-├── README.md
+DCASE2019-Task1A-Acoustic-Scene-Classification/
 ├── LICENSE
-├── requirements.txt
+├── README.md
+├── asc_train_eval.py
 ├── configs.yaml
-├── scripts/
-│ └── prepare_folds.py
-├── src/
-│ ├── init.py
-│ ├── train.py
-│ ├── eval.py
-│ ├── data/
-│ │ ├── init.py
-│ │ └── dcase_dataset.py
-│ ├── models/
-│ │ ├── init.py
-│ │ └── efficientnet_audio.py
-│ └── utils/
-│ ├── init.py
-│ ├── ema.py
-│ └── scheduler.py
-└── report/
-├── RESULTS.md (optional)
-└── images/ (place simulated plots here)
+├── prepare_folds.py
+└── requirements.txt
 
 
 ```
