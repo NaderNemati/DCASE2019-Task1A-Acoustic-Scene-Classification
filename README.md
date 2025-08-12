@@ -59,7 +59,8 @@ data/
 
 ## CSV format:
 
-...
+```python
+
 filename,scene_label
 fold1/airport_0001.wav,airport
 fold1/bus_0001.wav,bus
