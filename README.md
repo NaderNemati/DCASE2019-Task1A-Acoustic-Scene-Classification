@@ -8,23 +8,15 @@ Pipeline = **log-mel spectrograms** + **transfer learning** (EfficientNet-B2, Im
 
 ---
 
-## Quickstart
+## Data format
+
+    Audio: mono (mixed on load), 44.1 kHz WAV, 10-s segments.
+
+    CSV columns: filename, scene_label, where filename is relative to --audio_root.
+
+    Default classes (10):
 
 ```bash
 
-# Install Python + venv + pip (if needed)
-sudo apt update
-sudo apt install -y python3 python3-venv python3-pip
-
-# 1) Environment
-python3 -m venv .venv
-source .venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
-# (to exit later: deactivate)
-
-# 2) Data
-# Place audio waves under: data/audio/
-# Prepare metadata CSVs (columns: filename, scene_label) under: data/metadata/
-# Optionally Create 4 folds from a single CSV:
-python -m scripts.prepare_folds --meta data/metadata/all.csv --out_dir data/metadata --folds 4
+airport, bus, metro, metro_station, park,
+public_square, shopping_mall, street_pedestrian, street_traffic, tram
