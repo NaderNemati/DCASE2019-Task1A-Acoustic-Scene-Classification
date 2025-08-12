@@ -49,7 +49,8 @@ Defaults are in configs.yaml (STFT/mel, SpecAugment widths, mixup α, label smoo
 
 ## File tree
 
-.
+```python
+
 ├── README.md
 ├── LICENSE
 ├── .gitignore
@@ -77,3 +78,4 @@ Defaults are in configs.yaml (STFT/mel, SpecAugment widths, mixup α, label smoo
 └── images/ (place simulated plots here)
 
 
+```
