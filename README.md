@@ -53,10 +53,8 @@ Defaults are in configs.yaml (STFT/mel, SpecAugment widths, mixup α, label smoo
 
 ├── README.md
 ├── LICENSE
-├── .gitignore
 ├── requirements.txt
-├── configs/
-│ └── default.yaml
+├── configs.yaml
 ├── scripts/
 │ └── prepare_folds.py
 ├── src/
