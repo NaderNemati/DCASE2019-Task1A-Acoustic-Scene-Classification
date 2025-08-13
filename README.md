@@ -1,6 +1,6 @@
 # DCASE2019 Task 1A — Acoustic Scene Classification (PyTorch)
 
-A clean, reproducible baseline for **DCASE2019 Task 1A** (10-second audio clips, **10** scene classes, **12** European cities).
+The Kaggle DCASE2019 Task 1A – Leaderboard mirrors the official challenge: for each isolated 10-second clip from the TAU Urban Acoustic Scenes 2019 dataset, recorded with the same Device A, you must predict one of 10 urban scene classes (airport, park, tram, etc.). The development data spans 10 cities, while the hidden evaluation set spans 12, so the real objective is city-level generalization; submissions are ranked by clip-level accuracy, and the Kaggle board serves as a public development leaderboard for participants. Standard data augmentation is allowed under the task rules. My solution keeps the stack compact and robust: convert audio to log-mel spectrograms, fine-tune an ImageNet-initialized EfficientNet-B2, and stabilize training with SpecAugment, small time-shifts, light noise/gain, and mixup, optimized with AdamW + label smoothing + cosine warm-up + EMA; at test time, average a few time-shifted crops (TTA) for steadier predictions.
 
 **Method at a glance**
 - **Features:** log-mel spectrograms (128 mels, ~25 ms window / ~10 ms hop), per-sample standardization  
